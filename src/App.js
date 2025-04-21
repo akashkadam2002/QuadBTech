@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import EmployeeRegistrationForm from './EmployeeRegistrationForm';
 import './App.css';
 
 function App() {
+  const handleEmployeeRegister = (employeeData) => {
+    console.log('Registered Employee:', employeeData);
+    alert('Employee Registered Successfully!');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <EmployeeRegistrationForm 
+        title="Employee Registration" 
+        onRegister={handleEmployeeRegister} 
+      />
     </div>
   );
 }
